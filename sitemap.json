@@ -1,0 +1,31 @@
+{
+	"global": {
+		"webviewParameter": {
+			"titleNView": false, //首页不使用原生导航条  
+			"appendCss": "",
+			"appendJs": ""
+		},
+		"easyConfig": {}
+	},
+	"pages": [
+		{//未适配的公共页面，可拦截原生下载和头部导航栏, 注：通配符的规则+放在最后一个节点才能达到适配所有未适配的公共页面效果，适配规则优先级为自上而下查找匹配规则
+		    "webviewId": "common",
+		    "matchUrls": [
+		        {
+		            "hostname": "R:.*",
+		            "pathname": "R:.*"
+		        }
+		    ]
+		},
+		{
+		"webviewId": "__W2A__172.16.6.163", //首页
+		"matchUrls": [{
+			"href": "http://172.16.6.163:8080"
+		}, {
+			"href": "http://172.16.6.163:8080/"
+		}],
+		"webviewParameter": {
+			"titleNView": false
+		}
+	}]
+}
